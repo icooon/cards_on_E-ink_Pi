@@ -1,0 +1,21 @@
+{
+  "name": "eink-visual-generator",
+  "version": "1.0.0",
+  "description": "Generate visuals for e-ink display using Three.js and p5.js",
+  "scripts": {
+    "generate": "node generate.js",
+    "generate-optimized": "node generate-optimized.js",
+    "generate-simple": "node generate-simple.js",
+    "deploy": "node deploy.js",
+    "dev": "node generate.js && npm run deploy",
+    "dev-optimized": "node generate-optimized.js && npm run deploy",
+    "dev-simple": "node generate-simple.js && npm run deploy"
+  },
+  "dependencies": {
+    "three": "^0.167.1",
+    "p5": "^1.7.0",
+    "canvas": "^2.11.2",
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {}
+}

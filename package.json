@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "Generate visuals for e-ink display using Three.js and p5.js",
   "scripts": {
+    "find-pi": "node find-pi.js",
+    "find-pi-shell": "./find-pi.sh",
     "generate": "node generate.js",
     "generate-optimized": "node generate-optimized.js",
     "generate-simple": "node generate-simple.js",
+    "generate-circles": "node generate-circles.js",
     "deploy": "node deploy.js",
     "dev": "node generate.js && npm run deploy",
     "dev-optimized": "node generate-optimized.js && npm run deploy",
-    "dev-simple": "node generate-simple.js && npm run deploy"
+    "dev-simple": "node generate-simple.js && npm run deploy",
+    "auto-dev": "npm run find-pi && npm run dev-simple",
+    "discover": "npm run find-pi"
   },
   "dependencies": {
     "three": "^0.167.1",

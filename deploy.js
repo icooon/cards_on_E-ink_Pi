@@ -14,10 +14,10 @@ async function deployToPi() {
     console.log('Deploying to Pi...');
     
     // Sync generated images
-    const syncPics = `rsync -avz ${LOCAL_PICS}/ ${PI_USER}@${PI_IP}:${PI_PICS}/`;
+    const syncPics = `rsync -avz -e "sshpass -p '2308' ssh -o StrictHostKeyChecking=no" ${LOCAL_PICS}/ ${PI_USER}@${PI_IP}:${PI_PICS}/`;
     
     // Sync project files
-    const syncProject = `rsync -avz --exclude node_modules --exclude .git --exclude pics . ${PI_USER}@${PI_IP}:${PI_PROJECT}/`;
+    const syncProject = `rsync -avz -e "sshpass -p '2308' ssh -o StrictHostKeyChecking=no" --exclude node_modules --exclude .git --exclude pics . ${PI_USER}@${PI_IP}:${PI_PROJECT}/`;
     
     try {
         console.log('Syncing images...');

@@ -4,7 +4,7 @@ const { createCanvas } = require('canvas');
 const fs = require('fs');
 const path = require('path');
 
-// E-ink display dimensions
+// E-ink display dimensions - FIXED for Pi display
 const WIDTH = 800;
 const HEIGHT = 480;
 
@@ -51,7 +51,8 @@ function generateCircles() {
         fs.mkdirSync(path.dirname(filepath), { recursive: true });
     }
     
-    // Save
+    // Keep transparent background - don't convert to RGB!
+    // This preserves transparency for true layering
     const buffer = canvas.toBuffer('image/png');
     fs.writeFileSync(filepath, buffer);
     
